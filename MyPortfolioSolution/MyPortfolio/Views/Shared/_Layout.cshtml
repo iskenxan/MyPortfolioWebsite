@@ -18,8 +18,8 @@
                          <p>Software Developer</p> 
                     </div>
                     <ul class="navigation-bar">
-                        <li role="presentation" ><a class="active" href="#">About</a></li>
-                        <li role="presentation"><a href="#">Projects</a></li>
+                        <li role="presentation" ><a class="@(ViewContext.RouteData.Values["Action"].ToString()=="Index"?"active":"")"  href="/Home/Index">About</a></li>
+                        <li role="presentation"><a class="@(ViewContext.RouteData.Values["Action"].ToString()=="Projects"?"active":"")" href="/Home/Projects">Projects</a></li>
                         <li role="presentation"><a href="#">Reviews</a></li>
                         <li role="presentation"><a href="#">Social</a></li>
                     </ul>
@@ -42,6 +42,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/custom")
     @RenderSection("scripts", required: false)
 </body>
 </html>
