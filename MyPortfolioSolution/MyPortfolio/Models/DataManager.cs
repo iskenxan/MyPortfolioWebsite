@@ -35,5 +35,26 @@ namespace MyPortfolio.Models
 
             return technologies;
         }
+
+
+        public static ProjectListManager getMyProjectListManager()
+        {
+            ProjectListManager manager = new ProjectListManager();
+
+            Project project1 = new Project();
+            project1.Name = "EZNDA";
+            project1.Description = "A web application for signing NDA's quickly and efficiently. Written in React.JS with a Tomcat as a back end server. ";
+            project1.ImageUrl = "/Content/Images/project1.jpg";
+
+            Project project2 = new Project();
+            project2.Name = "Brain Marathon";
+            project2.Description = "A two player online game written for Android OS. Uses Firebase as a cloud storage and the database.";
+            project2.ImageUrl = "/Content/Images/project2.jpg";
+
+            manager.addProject(project1);
+            manager.addProject(project2);
+
+            return manager;
+        }
     }
 }

@@ -159,6 +159,5 @@ C:\Users\Ashley\Documents\GitHub\MyPortfolio\MyPortfolioWebsite\MyPortfolioSolut
 C:\Users\Ashley\Documents\GitHub\MyPortfolio\MyPortfolioWebsite\MyPortfolioSolution\MyPortfolio\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\Ashley\Documents\GitHub\MyPortfolio\MyPortfolioWebsite\MyPortfolioSolution\MyPortfolio\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Ashley\Documents\GitHub\MyPortfolio\MyPortfolioWebsite\MyPortfolioSolution\MyPortfolio\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\Ashley\Documents\GitHub\MyPortfolio\MyPortfolioWebsite\MyPortfolioSolution\MyPortfolio\obj\Debug\MyPortfolio.csprojResolveAssemblyReference.cache
 C:\Users\Ashley\Documents\GitHub\MyPortfolio\MyPortfolioWebsite\MyPortfolioSolution\MyPortfolio\obj\Debug\MyPortfolio.dll
 C:\Users\Ashley\Documents\GitHub\MyPortfolio\MyPortfolioWebsite\MyPortfolioSolution\MyPortfolio\obj\Debug\MyPortfolio.pdb

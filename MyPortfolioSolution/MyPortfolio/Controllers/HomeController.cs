@@ -11,25 +11,26 @@ namespace MyPortfolio.Controllers
     {
         public ActionResult Index()
         {
-            NavbarManager navManager = new NavbarManager("About");
             List<string> languages = DataManager.getKnownLanguages();
             List<string> technologies = DataManager.getKnowTechnologies();
 
             ViewBag.languages = languages;
             ViewBag.technologies = technologies;
 
-            return View(navManager);
+            return View();
         }
 
 
         public ActionResult Projects()
         {
-            NavbarManager navManager = new NavbarManager("Projects");
+            ViewBag.Title = "Projects";
 
-            ViewBag.Message = "Your application description page.";
+            ProjectListManager projectManager = DataManager.getMyProjectListManager();
 
-            return View(navManager);
+
+            return View(projectManager);
         }
+
 
         public ActionResult Contact()
         {

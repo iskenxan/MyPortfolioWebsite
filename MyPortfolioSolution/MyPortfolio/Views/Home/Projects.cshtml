@@ -1,7 +1,17 @@
-﻿@{
-    ViewBag.Title = "Projects";
-}
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
-
-<p>Use this area to provide additional information.</p>
+﻿
+@model MyPortfolio.Models.ProjectListManager
+<div class="projects-container">
+    <h1 class="content-header-red"><strong>@ViewBag.Title</strong></h1>
+    <div class="projects-inner-container">
+        @foreach (var project in Model.Projects){
+            <div class="project-container">
+                <img src="@project.ImageUrl" />
+                <div class="project-overlay"></div>
+                <div class="project-info-container">
+                    <h3 class="project-title">@project.Name</h3>
+                    <p>@project.Description</p>
+                </div>
+            </div>
+        }
+    </div>
+</div>

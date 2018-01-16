@@ -28,7 +28,8 @@ namespace MyPortfolio
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/content.css",
+                      "~/Content/top.css"));
 
         }
     }

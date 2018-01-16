@@ -7,4 +7,16 @@
         },
             'slow');
     });
+
+    $(".project-container").mouseover(function () {
+        $(this).find(".project-info-container").css("display", "block");
+        $(this).find(".project-overlay").css("background", "rgba(0,0,0,0.97)");
+    });
+
+    $(".project-container").mouseout(function () {
+        $(this).find(".project-info-container").css("display", "none");
+        $(this).find(".project-overlay").css("background", "transparent");
+    });
 });
+
+
