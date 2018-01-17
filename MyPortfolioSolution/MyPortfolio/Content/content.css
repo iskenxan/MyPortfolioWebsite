@@ -113,7 +113,7 @@
 
 .projects-inner-container{
     max-width:600px;
-    margin-top:200px;
+    margin-top:150px;
     margin-bottom:100px;
     margin-left:auto;
     margin-right:auto;
@@ -125,7 +125,7 @@
     display:inline-block;
     box-shadow: -2px 2px 5px grey;
     border-radius:5px;
-    margin-top:30px;
+    margin-top:100px;
 }
 
 .project-container img{
@@ -140,6 +140,7 @@
     top:0;
     bottom:0;
     position:absolute;
+    border-radius:5px;
     background:transparent;
 }
 
@@ -162,4 +163,42 @@
 
 .project-info-container p{
     color:#fac414;
+}
+
+.reviews-container{
+    text-align:center;
+}
+
+.reviews-inner-container{
+    padding-left:40px;
+    padding-right:40px;
+    margin-top:150px;
+}
+
+.review-container{
+    text-align:left;
+    margin-bottom:200px;
+}
+
+.review-container p{
+    margin-top:60px;
+    font-size:17px;
+}
+
+.review-container h4{
+    margin-top:5px;
+}
+
+.rating-container{
+    display:inline-block;
+    height:30px;
+    margin-top:10px;
+}
+
+.rating-icon{
+    float:right;
+    height:15px;
+    width:15px;
+    margin-left:4px;
+    margin-right:4px;
 }

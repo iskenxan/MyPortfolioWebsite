@@ -32,11 +32,13 @@ namespace MyPortfolio.Controllers
         }
 
 
-        public ActionResult Contact()
+        public ActionResult Reviews()
         {
-            ViewBag.Message = "Your contact page.";
+            ReviewsManager reviewsManager = DataManager.getMyReviews();
 
-            return View();
+            ViewBag.Title = "Reviews";
+
+            return View(reviewsManager);
         }
     }
 }

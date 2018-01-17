@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace MyPortfolio.Models
 {
@@ -53,6 +54,31 @@ namespace MyPortfolio.Models
 
             manager.addProject(project1);
             manager.addProject(project2);
+
+            return manager;
+        }
+
+
+        public static ReviewsManager getMyReviews()
+        {
+            ReviewsManager manager = new ReviewsManager();
+            Review review1 = new Review();
+            review1.Name = "Sunny Ridge Productions";
+            review1.ProjectName = "Android app using Foursquare location API and camera";
+            review1.Rating = 5;
+            review1.Date = Formatter.convertDateToHumanString(DateTime.Now);
+            review1.Comment = "I had a terrific experience with Iskander. Codes it right and tests his own stuff thoroughly. Identifies and solves problems independently. Communicates well live and in writing. I will definitely hire him again for Android development.";
+
+            Review review2 = new Review();
+            review2.Name = "Defence Unlimited";
+            review2.ProjectName = "A Military website written in PHP";
+            review2.Rating = 5;
+            review2.Date = Formatter.convertDateToHumanString(DateTime.Now);
+            review2.Comment = "Great web developer. On time. works well. understands instructions and understands what looks good. Definitely recommend this developer.";
+
+
+            manager.addReview(review1);
+            manager.addReview(review2);
 
             return manager;
         }

@@ -1,0 +1,24 @@
+﻿@model MyPortfolio.Models.ReviewsManager
+
+<div class="reviews-container">
+    <h1 class="content-header-red">@ViewBag.Title</h1>
+    <div class="reviews-inner-container">
+        @foreach (var review in Model.Reviews)
+        {
+            <div class="review-container">
+                <h2 class="content-header-green">@review.Name</h2>
+                <h3><strong>@review.ProjectName</strong></h3>
+                <h3> @review.Date.ToString()</h3>
+                <div class="rating-container">
+                    <img class="rating-icon" src="~/Content/Images/star_icon.png" />
+                    <img class="rating-icon" src="~/Content/Images/star_icon.png" />
+                    <img class="rating-icon" src="~/Content/Images/star_icon.png" />
+                    <img class="rating-icon" src="~/Content/Images/star_icon.png" />
+                    <img class="rating-icon" src="~/Content/Images/star_icon.png" />
+                </div>
+                <p><i>@review.Comment</i></p>
+                <hr />
+            </div>
+        }
+    </div>
+</div>
