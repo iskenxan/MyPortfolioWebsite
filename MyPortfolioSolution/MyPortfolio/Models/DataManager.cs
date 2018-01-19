@@ -72,7 +72,7 @@ namespace MyPortfolio.Models
             Review review2 = new Review();
             review2.Name = "Defence Unlimited";
             review2.ProjectName = "A Military website written in PHP";
-            review2.Rating = 5;
+            review2.Rating = 4;
             review2.Date = Formatter.convertDateToHumanString(DateTime.Now);
             review2.Comment = "Great web developer. On time. works well. understands instructions and understands what looks good. Definitely recommend this developer.";
 

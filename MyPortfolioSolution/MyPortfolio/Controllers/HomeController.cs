@@ -40,5 +40,14 @@ namespace MyPortfolio.Controllers
 
             return View(reviewsManager);
         }
+
+
+        public ActionResult Social()
+        {
+
+            ViewBag.Title = "Social";
+
+            return View();
+        }
     }
 }

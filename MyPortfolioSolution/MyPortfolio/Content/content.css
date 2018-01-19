@@ -106,6 +106,22 @@
     border-color:transparent;
 }
 
+.btn-highlight{
+    background:#fac414;
+    color:#1e2e38;
+    border-color:transparent;
+}
+
+.btn-highlight:hover{
+    background:#121B21;
+    color:#fac414;
+    border-color:transparent;
+}
+
+.modal-open .btn-highlight{
+    margin-right:17px;
+}
+
 
 .projects-container{
     text-align:center;
@@ -196,9 +212,49 @@
 }
 
 .rating-icon{
-    float:right;
+    float:left;
     height:15px;
     width:15px;
     margin-left:4px;
     margin-right:4px;
+}
+
+#review-btn-sticky{
+    display:none;
+    position:fixed;
+    bottom:30px;
+    right:15px;
+}
+
+.form-control:focus {
+  border-color: #fac414;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+}
+
+.social-container{
+    text-align:center;
+}
+
+.inner-social-container{
+    display:inline-block;
+    max-width:850px;
+    position:relative;
+    margin-top:100px;
+    margin-bottom:150px;
+}
+
+.social-icon{
+    width:45px;
+    height:45px;
+}
+
+.social-icon-container{
+    width:30%;
+    display:inline-block;
+    vertical-align:bottom;
+    text-align:center;
+}
+
+.social-icon-container a:hover{
+    cursor:pointer;
 }
