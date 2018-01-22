@@ -1,0 +1,46 @@
+﻿body {
+}
+
+#loginForm{
+    text-align:left;
+    display:inline-block;
+    min-width:550px;
+}
+
+.login-outter-container{
+    text-align:center;
+}
+
+.login-inner-container{
+    display:inline-block;
+    max-width:550px;
+}
+
+.admin-header{
+    background: url("Images/admin_header_bg.png") no-repeat center center;
+    width:100%;
+    min-height:100px;
+    text-align:center;
+    background-size:100%;
+    padding-top:20px;
+}
+
+.admin-root{
+    background:#f1f1f1;
+    padding-bottom:50px;
+    height:100%;
+}
+
+.admin-header h1{
+    color:white;
+}
+
+.body-inner-container{
+    min-height:250px;
+    box-shadow: -1px 1px 2px #dcdcdc;
+    margin-top:50px;
+}
+
+
+
+

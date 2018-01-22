@@ -31,6 +31,9 @@ namespace MyPortfolio
                       "~/Content/content.css",
                       "~/Content/top.css"));
 
+            bundles.Add(new StyleBundle("~/Content/admin").Include(
+                        "~/Content/admin.css"));
+
 
         }
     }
