@@ -44,7 +44,7 @@ namespace MyPortfolio.Models
 
             Project project1 = new Project();
             project1.Name = "EZNDA";
-            project1.Description = "A web application for signing NDA's quickly and efficiently. Written in React.JS with a Tomcat as a back end server. ";
+            project1.Description = "A web application for signing NDA's quickly and efficiently. Written in React.JS with a Tomcat as a back end server.";
             project1.ImageUrl = "/Content/Images/project1.jpg";
 
             Project project2 = new Project();

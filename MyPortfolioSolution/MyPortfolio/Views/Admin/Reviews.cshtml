@@ -1,0 +1,45 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div>
+    <div>
+        <div class="reviews-inner-container">
+            @foreach (var review in Model.Reviews)
+            {
+                <div class="review-container">
+                    <h2>@review.Name</h2>
+                    <hr />
+                    <h3>@review.ProjectName</h3>
+                    <h5> @review.Date.ToString()</h5>
+                    <div class="rating-container">
+                        @{
+                            int counter = review.Rating;
+                            for (int i = 0; i < 5; i++)
+                            {
+                                if (counter > 0)
+                                {
+                                    <img class="rating-icon" src="~/Content/Images/star_icon.png" />
+                                }
+                                else
+                                {
+                                    <img class="rating-icon" src="~/Content/Images/star_icon_white.png" />
+                                }
+                                counter--;
+                            }
+                        }
+                    </div>
+                    <p><i>@review.Comment</i></p>
+                    <div style="margin-top:40px;">
+                        <button style="margin-right:30px;" class="btn btn-secondary">Delete</button>
+                        <button class="btn btn-success">Accept</button>
+                    </div>
+                </div>
+               
+           }
+        </div>
+    </div>
+</div>
+
+
