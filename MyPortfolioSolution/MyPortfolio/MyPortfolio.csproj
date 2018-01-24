@@ -342,6 +342,7 @@
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Admin\Reviews.cshtml" />
     <Content Include="Views\Admin\Projects.cshtml" />
+    <Content Include="Views\Admin\Skills.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

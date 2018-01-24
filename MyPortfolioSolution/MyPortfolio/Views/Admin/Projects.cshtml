@@ -1,19 +1,26 @@
 ﻿@{
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
+@model MyPortfolio.Models.ProjectListManager
 
 <div>
     <div class="admin-projects-inner-container">
-        <div class="admin-project-containter">
-            <h2>EZNDA</h2>
-            <hr />
-            <p>A web application for signing NDA's quickly and efficiently. Written in React.JS with a Tomcat as a back end server.</p>
-            <img style="width:150px;height:100px;" src="~/Content/Images/project1.jpg" />
-            <div style="margin-top:40px;">
-                <button style="margin-right:30px;" class="btn btn-secondary">Delete</button>
-                <button class="btn btn-success">Edit</button>
-            </div>
+        <div style="width:100%; margin-bottom:100px;">
+            <button class="btn btn-primary">Add New Project</button>
         </div>
+        @foreach (var project in Model.Projects)
+        {
+            <div class="admin-project-containter">
+                <h2>@project.Name</h2>
+                <hr />
+                <p>@project.Description</p>
+                <img style="width:150px;height:100px;" src="@project.ImageUrl" />
+                <div style="margin-top:40px;">
+                    <button style="margin-right:30px;" class="btn btn-secondary">Delete</button>
+                    <button class="btn btn-success">Edit</button>
+                </div>
+            </div>
+        }
     </div>
 </div>
 

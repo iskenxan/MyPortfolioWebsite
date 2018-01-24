@@ -64,6 +64,40 @@ a.btn-primary{
     color:#fac414;
 }
 
+.admin-project-containter{
+    margin-bottom:150px;
+}
+
+table{
+    width:100%;
+    margin-top:50px;
+    border: 1px solid #dcdcdc;
+    border-radius:5px;
+}
+
+caption{
+    caption-side:top;
+    color:#3f7357;
+    font-weight:900;
+}
+
+tr{
+   color:#4b4848;
+}
+
+td{
+    padding:15px;
+    padding-bottom:15px;
+    vertical-align:middle;
+}
+
+tr:hover{
+    background:#e9e9e9;
+}
+
+td p{
+    margin:0px;
+}
 
 
 

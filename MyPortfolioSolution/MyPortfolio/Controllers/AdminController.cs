@@ -35,5 +35,18 @@ namespace MyPortfolio.Controllers
 
             return View(projects);
         }
+
+
+        public ActionResult Skills()
+        {
+            List<string> languages = DataManager.getKnownLanguages();
+            List<string> technologies = DataManager.getKnowTechnologies();
+
+            ViewBag.Title = "Admin Skills";
+            ViewBag.languages = languages;
+            ViewBag.technologies = technologies;
+
+            return View();
+        }
     }
 }
