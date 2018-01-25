@@ -31,11 +31,22 @@ namespace MyPortfolio.Controllers
             return View(projectManager);
         }
 
-
+        
         public ActionResult Reviews()
         {
+            DatabaseManager.connectToDatabase();
             ReviewsManager reviewsManager = DataManager.getMyReviews();
+            ViewBag.Title = "Reviews";
 
+            return View(reviewsManager);
+        }
+
+        [HttpPost]
+        public ActionResult Reviews(string reviewerName, string reviewTitle, string reviewComments)
+        {
+            ReviewsManager reviewsManager = DataManager.getMyReviews();
+            Review review = new Review() { Name = reviewerName, ProjectName = reviewTitle, Comment = reviewComments, Date = Formatter.convertDateToHumanString(DateTime.Now),Rating=5 };
+            reviewsManager.Reviews.Add(review);
             ViewBag.Title = "Reviews";
 
             return View(reviewsManager);

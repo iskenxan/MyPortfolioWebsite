@@ -34,49 +34,55 @@
 
     <button type="button" data-toggle="modal" data-target="#reviewModal" id="review-btn-sticky" class="btn btn-highlight btn-lg">Leave a review?</button>
 
+
     <!-- Modal -->
     <div class="modal fade" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="reviewModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Leave your review</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+            @using (Html.BeginForm("Reviews", "Home"))
+            {
+                <div class="modal-dialog modal-dialog-centered" role="document">
+
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Leave your review</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div style="text-align:left;" class="modal-body">
+                            <div style="width:100%; text-align:left">
+                                <p style="color:#3f7357;">Your organization name</p>
+                            </div>
+                            <input type="text" name="reviewerName" class="form-control" placeholder="Enter your name"/>
+                            <br />
+                            <div style="width:100%; text-align:left">
+                                <p style="color:#3f7357;">Project title</p>
+                            </div>
+                            <input type="text" name="reviewTitle" class="form-control" placeholder="Enter your project title" />
+                            <br />
+                            <div style="width:100%; text-align:left">
+                                <p style="color:#3f7357;">Your rating</p>
+                            </div>
+                            <div style="margin-top:0px;margin-bottom:15px;height:20px;" class="rating-container">
+                                <img class="rating-icon rating-dialog" id="rating1" src="~/Content/Images/star_icon_white.png" />
+                                <img class="rating-icon rating-dialog" id="rating2" src="~/Content/Images/star_icon_white.png" />
+                                <img class="rating-icon rating-dialog" id="rating3" src="~/Content/Images/star_icon_white.png" />
+                                <img class="rating-icon rating-dialog" id="rating4" src="~/Content/Images/star_icon_white.png" />
+                                <img class="rating-icon rating-dialog" id="rating5" src="~/Content/Images/star_icon_white.png" />
+                            </div>
+                            <br />
+                            <div style="width:100%; text-align:left">
+                                <p style="color:#3f7357;">Your Comments</p>
+                            </div>
+                            <textarea name="reviewComments" class="form-control" rows="5"></textarea>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <input type="submit" value="Submit" class="btn btn-primary">
+                        </div>
+                    </div>
+           
                 </div>
-                <div style="text-align:left;" class="modal-body">
-                    <div style="width:100%; text-align:left">
-                        <p style="color:#3f7357;">Your organization name</p>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Enter your name"/>
-                    <br />
-                    <div style="width:100%; text-align:left">
-                        <p style="color:#3f7357;">Project title</p>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Enter your project title" />
-                    <br />
-                    <div style="width:100%; text-align:left">
-                        <p style="color:#3f7357;">Your rating</p>
-                    </div>
-                    <div style="margin-top:0px;margin-bottom:15px;height:20px;" class="rating-container">
-                        <img class="rating-icon rating-dialog" id="rating1" src="~/Content/Images/star_icon_white.png" />
-                        <img class="rating-icon rating-dialog" id="rating2" src="~/Content/Images/star_icon_white.png" />
-                        <img class="rating-icon rating-dialog" id="rating3" src="~/Content/Images/star_icon_white.png" />
-                        <img class="rating-icon rating-dialog" id="rating4" src="~/Content/Images/star_icon_white.png" />
-                        <img class="rating-icon rating-dialog" id="rating5" src="~/Content/Images/star_icon_white.png" />
-                    </div>
-                    <br />
-                    <div style="width:100%; text-align:left">
-                        <p style="color:#3f7357;">Your Comments</p>
-                    </div>
-                    <textarea class="form-control" rows="5"></textarea>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Submit</button>
-                </div>
-            </div>
-        </div>
+            }
     </div>
 
 

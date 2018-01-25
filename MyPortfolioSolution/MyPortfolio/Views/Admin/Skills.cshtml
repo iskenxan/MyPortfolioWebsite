@@ -14,7 +14,7 @@
             }
         </table>
         <div style="width:100%;text-align:right;margin-top:20px;">
-            <button class="btn btn-success">Add New</button>
+            <button data-toggle="modal" data-target="#adminLanguagesModal" class="btn btn-success">Add New</button>
         </div>
 
         <table>
@@ -28,10 +28,44 @@
             }
         </table>
         <div style="width:100%;text-align:right;margin-top:20px;">
-            <button class="btn btn-success">Add New</button>
+            <button data-toggle="modal" data-target="#adminTechnologiesModal" class="btn btn-success">Add New</button>
         </div>
-
     </div>
 
+    <div class="modal fade" id="adminLanguagesModal" tabindex="-1" role="dialog" aria-labelledby="adminProjectsModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div style="text-align:left;" class="modal-body">
+                    <div style="width:100%; text-align:left">
+                        <p style="color:#3f7357;">New Language</p>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Enter new language name" />
+                    <br />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="adminTechnologiesModal" tabindex="-1" role="dialog" aria-labelledby="adminProjectsModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div style="text-align:left;" class="modal-body">
+                    <div style="width:100%; text-align:left">
+                        <p style="color:#3f7357;">New Technology</p>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Enter new technology name" />
+                    <br />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
