@@ -34,7 +34,6 @@ namespace MyPortfolio.Controllers
         
         public ActionResult Reviews()
         {
-            DatabaseManager.connectToDatabase();
             ReviewsManager reviewsManager = DataManager.getMyReviews();
             ViewBag.Title = "Reviews";
 

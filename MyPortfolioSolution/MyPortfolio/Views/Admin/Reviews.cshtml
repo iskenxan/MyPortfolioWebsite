@@ -12,7 +12,7 @@
                     <h2>@review.Name</h2>
                     <hr />
                     <h3>@review.ProjectName</h3>
-                    <h5> @review.Date.ToString()</h5>
+                    <h5> @review.DateString</h5>
                     <div class="rating-container">
                         @{
                             int counter = review.Rating;
@@ -36,7 +36,6 @@
                         <button class="btn btn-success">Accept</button>
                     </div>
                 </div>
-               
            }
         </div>
     </div>

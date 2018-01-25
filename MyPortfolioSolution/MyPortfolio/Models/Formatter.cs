@@ -10,9 +10,7 @@ namespace MyPortfolio.Models
 
         public static string convertDateToHumanString(DateTime date)
         {
-            string dateStr = "";
-            string month= date.ToString("MMMM");
-            dateStr = month + " " + date.Day + ", " + date.Year;
+            string dateStr = date.ToString("MMMM dd, yy");
 
             return dateStr;
         }

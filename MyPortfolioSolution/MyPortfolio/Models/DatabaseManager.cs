@@ -8,27 +8,46 @@ namespace MyPortfolio.Models
 {
     public class DatabaseManager
     {
-        
 
-        public static string connectToDatabase()
+        private static string DATABASE_CONNECTION_STRING = "Data Source=(LocalDb)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\MyDB.mdf;Initial Catalog=MyDB;Integrated Security=True";
+
+
+        public static string writeReviewToDatabase(Review review)
         {
+            string query = "insert in [Reviews] values('"+review.Name+"','"+review.ProjectName+"','"+review.DateString+"',"+review.Rating+")";
+            string result = executeWriteCommand(query);
+
+            return result;
+        }
+
+
+        private static string executeWriteCommand(string query)
+        {
+            string result;
             try
             {
-                SqlConnection con = new SqlConnection("Data Source=(LocalDb)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\MyDB.mdf;Initial Catalog=MyDB;Integrated Security=True");
+                result= executeNonQueryCommand(query);
+            }
+            catch(Exception e)
+            {
+                result = e.GetBaseException().ToString();
+            }
+
+            return result;
+        }
+        
+
+        private static string executeNonQueryCommand(string query)
+        {
+                SqlConnection con = new SqlConnection();
                 SqlCommand command = new SqlCommand();
-                command.CommandText = "insert into [Reviews] values('','Iskander Samatov','Test',123123,5)";
+                command.CommandText = query;
                 command.Connection = con;
                 con.Open();
                 command.ExecuteNonQuery();
                 con.Close();
 
-                return "Success";
-            }
-            catch(Exception e)
-            {
-                return e.GetBaseException().ToString();
-            }
-
+                return "success";
         }
     }
 }   
