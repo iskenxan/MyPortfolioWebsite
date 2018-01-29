@@ -30,7 +30,7 @@
     });
 
 
-
+    //Refactor these functions
     $("#rating1").click(function () {
         var whiteIcon = "/Content/Images/star_icon_white.png";
         var yellow = "/Content/Images/star_icon.png";
@@ -40,6 +40,7 @@
         $("#rating3").attr("src", whiteIcon);
         $("#rating4").attr("src", whiteIcon);
         $("#rating5").attr("src", whiteIcon);
+        $("#rating-value").val("1");
     });
 
     $("#rating2").click(function () {
@@ -51,6 +52,7 @@
         $("#rating3").attr("src", whiteIcon);
         $("#rating4").attr("src", whiteIcon);
         $("#rating5").attr("src", whiteIcon);
+        $("#rating-value").val("2");
     });
 
     $("#rating3").click(function () {
@@ -62,6 +64,7 @@
         $("#rating3").attr("src", yellow);
         $("#rating4").attr("src", whiteIcon);
         $("#rating5").attr("src", whiteIcon);
+        $("#rating-value").val("3");
     });
 
     $("#rating4").click(function () {
@@ -73,6 +76,7 @@
         $("#rating3").attr("src", yellow);
         $("#rating4").attr("src", yellow);
         $("#rating5").attr("src", whiteIcon);
+        $("#rating-value").val("4");
     });
 
     $("#rating5").click(function () {
@@ -84,6 +88,7 @@
         $("#rating3").attr("src", yellow);
         $("#rating4").attr("src", yellow);
         $("#rating5").attr("src", yellow);
+        $("#rating-value").val("5");
     });
 });
 

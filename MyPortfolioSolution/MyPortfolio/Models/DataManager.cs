@@ -62,6 +62,7 @@ namespace MyPortfolio.Models
         public static ReviewsManager getMyReviews()
         {
             ReviewsManager manager = new ReviewsManager();
+            manager.Reviews = DatabaseManager.getReviews();
             Review review1 = new Review();
             review1.Name = "Sunny Ridge Productions";
             review1.ProjectName = "Android app using Foursquare location API and camera";

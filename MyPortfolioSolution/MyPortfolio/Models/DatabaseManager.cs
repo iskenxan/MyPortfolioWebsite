@@ -10,14 +10,29 @@ namespace MyPortfolio.Models
     {
 
         private static string DATABASE_CONNECTION_STRING = "Data Source=(LocalDb)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\MyDB.mdf;Initial Catalog=MyDB;Integrated Security=True";
-
+        private static SqlConnection con;
 
         public static string writeReviewToDatabase(Review review)
         {
-            string query = "insert in [Reviews] values('"+review.Name+"','"+review.ProjectName+"','"+review.DateString+"',"+review.Rating+")";
+            string query = "insert into [Reviews] values('"+review.Name+"','"+review.ProjectName+"','"+review.Comment+"','"+review.DateString+"',"+review.Rating+");";
             string result = executeWriteCommand(query);
 
             return result;
+        }
+
+
+        public static List<Review> getReviews()
+        {
+            string query = "select * from [Reviews];";
+            List<Review> reviews = new List<Review>();
+            SqlDataReader reader = executeSelectCommand(query);
+            while (reader != null && reader.Read())
+            {
+                Review review = DataConverter.getSingleReview(reader);
+                reviews.Add(review);
+            }
+
+            return reviews;
         }
 
 
@@ -35,19 +50,54 @@ namespace MyPortfolio.Models
 
             return result;
         }
-        
+
+
+        private static SqlDataReader executeSelectCommand(string query)
+        {
+            SqlDataReader reader;
+            try
+            {
+                reader = executeQueryCommand(query);
+            }
+            catch (Exception e)
+            {
+                reader = null;
+            }
+
+            return reader;
+        }
+
+
 
         private static string executeNonQueryCommand(string query)
         {
-                SqlConnection con = new SqlConnection();
-                SqlCommand command = new SqlCommand();
-                command.CommandText = query;
-                command.Connection = con;
-                con.Open();
-                command.ExecuteNonQuery();
-                con.Close();
+            SqlCommand command = getConnectedCommand();
+            command.CommandText = query;
+            command.ExecuteNonQuery();
+            con.Close();
 
-                return "success";
+            return "success";
+        }
+
+
+        private static SqlDataReader executeQueryCommand(string query)
+        {
+            SqlCommand command = getConnectedCommand();
+            command.CommandText = query;
+            SqlDataReader reader = command.ExecuteReader();
+
+            return reader;
+        }
+
+
+        private static SqlCommand getConnectedCommand()
+        {
+            con = new SqlConnection(DATABASE_CONNECTION_STRING);
+            SqlCommand command = new SqlCommand();
+            command.Connection = con;
+            con.Open();
+
+            return command;
         }
     }
 }   

@@ -40,13 +40,19 @@ namespace MyPortfolio.Controllers
             return View(reviewsManager);
         }
 
+
+
         [HttpPost]
-        public ActionResult Reviews(string reviewerName, string reviewTitle, string reviewComments)
+        public ActionResult Reviews(string reviewerName, string reviewTitle, string reviewComments, string rating)
         {
+            int ratingInt = Int32.Parse(rating);
+            Review review = DataConverter.generateReview(reviewerName, reviewTitle, reviewComments, ratingInt);
+            string result=DatabaseManager.writeReviewToDatabase(review);
+            if (result != "success")
+                ViewBag.Error = result;
             ReviewsManager reviewsManager = DataManager.getMyReviews();
-            Review review = new Review() { Name = reviewerName, ProjectName = reviewTitle, Comment = reviewComments, Date = Formatter.convertDateToHumanString(DateTime.Now),Rating=5 };
-            reviewsManager.Reviews.Add(review);
             ViewBag.Title = "Reviews";
+
 
             return View(reviewsManager);
         }
