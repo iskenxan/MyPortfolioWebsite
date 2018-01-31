@@ -17,8 +17,10 @@ namespace MyPortfolio.Controllers
             return View();
         }
 
-        public ActionResult Reviews()
+        public ActionResult Reviews(string modifyReviewState)
         {
+            if (modifyReviewState != null)
+                Console.WriteLine(modifyReviewState);
             ReviewsManager reviewsManager = DataManager.getMyReviews();
 
             ViewBag.Title = "Admin Reviews";

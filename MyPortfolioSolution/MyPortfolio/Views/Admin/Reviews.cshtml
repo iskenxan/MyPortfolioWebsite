@@ -32,8 +32,12 @@
                     </div>
                     <p><i>@review.Comment</i></p>
                     <div style="margin-top:40px;">
-                        <button style="margin-right:30px;" class="btn btn-secondary">Delete</button>
-                        <button class="btn btn-success">Accept</button>
+                        @using (Html.BeginForm("Reviews", "Admin"))
+                        {
+                            <input type="submit" value="Delete" name="modifyReviewState" style="margin-right:30px;" class="btn btn-secondary"/>
+                            <input type="submit" value="Accept" name="modifyReviewState" class="btn btn-success"/>
+                        }
+
                     </div>
                 </div>
            }
