@@ -5,11 +5,11 @@ using System.Web;
 
 namespace MyPortfolio.Models
 {
-    public class Review
+    public class Review:DatabaseRecord
     {
+        private int rating;
         private string name;
         private string projectName;
-        private int rating;
         private string dateStr;
         private string comment;
 
@@ -18,6 +18,5 @@ namespace MyPortfolio.Models
         public int Rating { get { return rating; } set { rating = value; } }
         public string DateString { get { return dateStr; } set { dateStr = value; } }
         public string Comment { get { return comment; } set { comment = value; } }
-
     }
 }

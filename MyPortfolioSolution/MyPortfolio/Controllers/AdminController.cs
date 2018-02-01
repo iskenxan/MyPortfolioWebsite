@@ -17,15 +17,25 @@ namespace MyPortfolio.Controllers
             return View();
         }
 
-        public ActionResult Reviews(string modifyReviewState)
+        public ActionResult Reviews(string newReviewState, int reviewId)
         {
-            if (modifyReviewState != null)
-                Console.WriteLine(modifyReviewState);
-            ReviewsManager reviewsManager = DataManager.getMyReviews();
+            if (newReviewState != null)
+                modifyReviewState(newReviewState, reviewId);
+
+            ReviewsManager reviewsManager = DataManager.getMyReviews(false);
 
             ViewBag.Title = "Admin Reviews";
 
             return View(reviewsManager);
+        }
+
+
+        private void modifyReviewState(string newState, int reviewId)
+        {
+            if (newState=="Accept")
+                DatabaseManager.updateRecord(DatabaseManager.REVIEWS_TABLE, reviewId, DatabaseManager.REVIEW_APPROVED, true);
+            else
+                DatabaseManager.removeRecord(DatabaseManager.REVIEWS_TABLE, reviewId);
         }
 
 

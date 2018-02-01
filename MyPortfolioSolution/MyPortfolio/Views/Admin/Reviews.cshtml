@@ -34,6 +34,7 @@
                     <div style="margin-top:40px;">
                         @using (Html.BeginForm("Reviews", "Admin"))
                         {
+                            <input type="hidden" value="@review.Id" name="reviewId" />
                             <input type="submit" value="Delete" name="modifyReviewState" style="margin-right:30px;" class="btn btn-secondary"/>
                             <input type="submit" value="Accept" name="modifyReviewState" class="btn btn-success"/>
                         }

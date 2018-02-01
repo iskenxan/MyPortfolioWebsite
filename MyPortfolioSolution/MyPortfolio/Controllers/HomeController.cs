@@ -34,7 +34,7 @@ namespace MyPortfolio.Controllers
         
         public ActionResult Reviews()
         {
-            ReviewsManager reviewsManager = DataManager.getMyReviews();
+            ReviewsManager reviewsManager = DataManager.getMyReviews(true);
             ViewBag.Title = "Reviews";
 
             return View(reviewsManager);
@@ -50,11 +50,9 @@ namespace MyPortfolio.Controllers
             string result=DatabaseManager.writeReviewToDatabase(review);
             if (result != "success")
                 ViewBag.Error = result;
-            ReviewsManager reviewsManager = DataManager.getMyReviews();
-            ViewBag.Title = "Reviews";
 
 
-            return View(reviewsManager);
+            return Reviews();
         }
 
 

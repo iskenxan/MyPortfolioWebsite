@@ -206,7 +206,8 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\DatabaseManager.cs" />
-    <Compile Include="Models\DataGenerator.cs" />
+    <Compile Include="Models\DatabaseRecord.cs" />
+    <Compile Include="Models\DataConverter.cs" />
     <Compile Include="Models\DataManager.cs" />
     <Compile Include="Models\Formatter.cs" />
     <Compile Include="Models\IdentityModels.cs" />

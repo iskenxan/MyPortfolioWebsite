@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace MyPortfolio.Models
 {
@@ -59,10 +60,11 @@ namespace MyPortfolio.Models
         }
 
 
-        public static ReviewsManager getMyReviews()
+        public static ReviewsManager getMyReviews(bool isApproved)
         {
             ReviewsManager manager = new ReviewsManager();
-            manager.Reviews = DatabaseManager.getReviews();
+            List<DatabaseRecord> records= DatabaseManager.getRecords(DatabaseManager.REVIEWS_TABLE, DatabaseManager.REVIEW_APPROVED, isApproved);
+            manager.Reviews = records.Cast<Review>().ToList();
 
             return manager;
         }
