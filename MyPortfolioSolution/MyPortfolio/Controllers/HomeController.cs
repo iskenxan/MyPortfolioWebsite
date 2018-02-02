@@ -46,7 +46,7 @@ namespace MyPortfolio.Controllers
         public ActionResult Reviews(string reviewerName, string reviewTitle, string reviewComments, string rating)
         {
             int ratingInt = Int32.Parse(rating);
-            Review review = DataConverter.generateReview(reviewerName, reviewTitle, reviewComments, ratingInt);
+            Review review = DataConverter.generateReview(reviewerName, reviewTitle, reviewComments, ratingInt,0);
             string result=DatabaseManager.writeReviewToDatabase(review);
             if (result != "success")
                 ViewBag.Error = result;

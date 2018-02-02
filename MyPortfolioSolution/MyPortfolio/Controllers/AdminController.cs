@@ -17,7 +17,7 @@ namespace MyPortfolio.Controllers
             return View();
         }
 
-        public ActionResult Reviews(string newReviewState, int reviewId)
+        public ActionResult Reviews(string newReviewState, int? reviewId)
         {
             if (newReviewState != null)
                 modifyReviewState(newReviewState, reviewId);
@@ -30,12 +30,13 @@ namespace MyPortfolio.Controllers
         }
 
 
-        private void modifyReviewState(string newState, int reviewId)
+        private void modifyReviewState(string newState, int? reviewId)
         {
+            int id = (int)reviewId;
             if (newState=="Accept")
-                DatabaseManager.updateRecord(DatabaseManager.REVIEWS_TABLE, reviewId, DatabaseManager.REVIEW_APPROVED, true);
+                DatabaseManager.updateRecord(DatabaseManager.REVIEWS_TABLE, id, DatabaseManager.REVIEW_APPROVED, true);
             else
-                DatabaseManager.removeRecord(DatabaseManager.REVIEWS_TABLE, reviewId);
+                DatabaseManager.removeRecord(DatabaseManager.REVIEWS_TABLE, id);
         }
 
 

@@ -9,10 +9,11 @@ namespace MyPortfolio.Models
     public class DataConverter
     {
 
-        public static Review generateReview(string reviewerName, string projectDescription, string reviewComment, int rating)
+        public static Review generateReview(string reviewerName, string projectDescription, string reviewComment, int rating, int isApproved)
         {
             String dateStr = Formatter.convertDateToHumanString(DateTime.Now);
-            Review review = new Review() {Name=reviewerName,ProjectName=projectDescription,Comment=reviewComment,Rating=rating,DateString=dateStr };
+            Review review = new Review() {Name=reviewerName,ProjectName=projectDescription,
+                Comment =reviewComment,Rating=rating,DateString=dateStr, IsApproved=isApproved };
 
             return review;
         }
@@ -40,6 +41,20 @@ namespace MyPortfolio.Models
             review.Rating = (int)reader["Rating"];
 
             return review;
+        }
+
+
+        public static object convertDataToDatabaseFormat(object newValue)
+        {
+            if (newValue is string)
+                newValue = "'" + newValue + "'";
+            else if (newValue is bool)
+                if ((bool)newValue == true)
+                    newValue = 1;
+                else
+                    newValue = 0;
+
+            return newValue;
         }
     }
 }

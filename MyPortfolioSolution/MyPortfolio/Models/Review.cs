@@ -8,6 +8,7 @@ namespace MyPortfolio.Models
     public class Review:DatabaseRecord
     {
         private int rating;
+        private int isApproved;
         private string name;
         private string projectName;
         private string dateStr;
@@ -18,5 +19,6 @@ namespace MyPortfolio.Models
         public int Rating { get { return rating; } set { rating = value; } }
         public string DateString { get { return dateStr; } set { dateStr = value; } }
         public string Comment { get { return comment; } set { comment = value; } }
+        public int IsApproved { get { return isApproved; } set { isApproved = value; } }
     }
 }

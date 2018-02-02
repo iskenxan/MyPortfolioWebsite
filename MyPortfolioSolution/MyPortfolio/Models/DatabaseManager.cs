@@ -17,7 +17,7 @@ namespace MyPortfolio.Models
 
         public static string writeReviewToDatabase(Review review)
         {
-            string query = "insert into [Reviews] values('"+review.Name+"','"+review.ProjectName+"','"+review.Comment+"','"+review.DateString+"',"+review.Rating+");";
+            string query = "insert into [Reviews] values('"+review.Name+"','"+review.ProjectName+"','"+review.Comment+"','"+review.DateString+"',"+review.Rating+","+review.IsApproved+");";
             string result = executeWriteCommand(query);
 
             return result;
@@ -27,9 +27,7 @@ namespace MyPortfolio.Models
         public static string updateRecord(string table, int id, string column, object newValue)
         {
             string result = null;
-            if(newValue is string)
-                newValue = "'" + newValue + "'";
-
+            newValue = DataConverter.convertDataToDatabaseFormat(newValue);
             string query = "update " + table + " set " + column + "=" + newValue + " where Id=" + id + ";";
             result = executeWriteCommand(query);
 
@@ -56,8 +54,7 @@ namespace MyPortfolio.Models
 
         public static List<DatabaseRecord> getRecords(string table, string selector, object value)
         {
-            if(value is string)
-                value = "'" + value + "'";
+            value = DataConverter.convertDataToDatabaseFormat(value);
 
             string query = "select * from " + table + " where "+selector+"="+value+";";
             return executeSelectQueryAndReadResult(query, table);
