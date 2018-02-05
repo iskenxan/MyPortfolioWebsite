@@ -1,6 +1,7 @@
 ﻿using MyPortfolio.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -16,6 +17,7 @@ namespace MyPortfolio.Controllers
 
             return View();
         }
+
 
         public ActionResult Reviews(string newReviewState, int? reviewId)
         {
@@ -47,6 +49,19 @@ namespace MyPortfolio.Controllers
             ViewBag.Title = "Admin Projects";
 
             return View(projects);
+        }
+
+
+        [HttpPost]
+        public ActionResult Projects(string projectName, string projectDescription, HttpPostedFileBase projectPicture)
+        {
+            if (projectName != null && projectDescription != null & projectPicture != null && projectPicture.ContentLength > 0)
+            {
+               string fileName = DataManager.saveFileInImages(projectPicture, this);
+
+            }
+
+            return Projects();
         }
 
 

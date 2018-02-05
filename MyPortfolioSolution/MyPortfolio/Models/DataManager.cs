@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Web;
+using System.Web.Mvc;
 
 namespace MyPortfolio.Models
 {
@@ -67,6 +70,15 @@ namespace MyPortfolio.Models
             manager.Reviews = records.Cast<Review>().ToList();
 
             return manager;
+        }
+
+        public static string saveFileInImages(HttpPostedFileBase file, Controller controller)
+        {
+            var fileName = Path.GetFileName(file.FileName);
+            var path = Path.Combine(controller.Server.MapPath("~/Content/Images/"), fileName);
+            file.SaveAs(path);
+
+            return fileName;
         }
     }
 }

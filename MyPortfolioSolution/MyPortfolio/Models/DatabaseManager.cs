@@ -23,6 +23,12 @@ namespace MyPortfolio.Models
             return result;
         }
 
+        //TODO: Finish this method & change the Projects table to make Id an identity increment
+        public static string writeProjectToDatabase(Project project)
+        {
+            string query = "insert into [Projects] values ()";
+        }
+
 
         public static string updateRecord(string table, int id, string column, object newValue)
         {
@@ -105,7 +111,6 @@ namespace MyPortfolio.Models
 
             return reader;
         }
-
 
 
         private static string executeNonQueryCommand(string query)
